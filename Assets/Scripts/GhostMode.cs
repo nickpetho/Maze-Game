@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GhostMode : MonoBehaviour
 {
-    public bool ghostMode = false;
-    public float ghostModeDuration = 0.4f;
+    private bool ghostMode = false;
+    public float ghostModeDuration = 1.0f;
     float timer;
     float ghostModeStart;
     public Material[] material;

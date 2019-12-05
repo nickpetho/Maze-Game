@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Treasure
+  - InnerWall
   layers:
   - Default
   - TransparentFX
