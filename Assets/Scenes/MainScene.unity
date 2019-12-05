@@ -4494,7 +4494,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783960cefec601f4cbbd26bf20025f34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xRayMode: 0
   xRayModeDuration: 2
   material:
   - {fileID: 2100000, guid: 0499c1b1cbc88c340bb8fbafa6978b24, type: 2}
@@ -4918,6 +4917,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1738560701}
+  - component: {fileID: 1738560702}
   m_Layer: 0
   m_Name: Enemy Spawn Manager
   m_TagString: Untagged
@@ -4939,6 +4939,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1738560702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738560700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3527c0bcbab71ba41aea05f00510f66d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 452421209005759869, guid: 67c0f07a4f3ba1f47aa25db2c87e668c,
+    type: 3}
+  spawnAmount: 3
+  positionArray:
+  - {x: -35, y: 0, z: -17}
+  - {x: 35, y: 0, z: 17}
+  - {x: 35, y: 0, z: -17}
+  - {x: -35, y: 0, z: -18}
+  - {x: -5, y: 0, z: 2}
 --- !u!1001 &1750246039
 PrefabInstance:
   m_ObjectHideFlags: 0

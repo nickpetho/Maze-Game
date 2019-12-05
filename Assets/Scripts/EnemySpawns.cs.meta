@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 4ea55e8d941f6e44ab3aba43faea4c97
+guid: 3527c0bcbab71ba41aea05f00510f66d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - treasurePrefab: {fileID: 6919898020639912971, guid: 654fdda4948c2ac4a94060740cf3ec8a,
-      type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
