@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class CollectTreasure : MonoBehaviour
 {
+    public TreasureData t;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        t.ResetCount();
     }
 
     // Update is called once per frame
@@ -25,6 +27,7 @@ public class CollectTreasure : MonoBehaviour
             Destroy(gameObject);
 
             //Decrement treasure counter
+            t.decrementCount();
         }
     }
 }

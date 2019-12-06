@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f451a217fb2742441b238c33bc3519f0, type: 2}
+  - {fileID: 2100000, guid: 8ab76964b22dbad42b9bdf86732ee543, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,3 +108,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupEffect: {fileID: 1025285306637258, guid: d8f0099df63275647a8bcf646df1ca00,
     type: 3}
+  g: {fileID: 11400000, guid: 0cb441d1a180989469412be1c1754aac, type: 2}

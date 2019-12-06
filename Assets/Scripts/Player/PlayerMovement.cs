@@ -47,7 +47,9 @@ public class PlayerMovement : MonoBehaviour
         if (g.CompareTag("Enemy"))
         {
             isCaught = true;
-            Debug.Log("Caught");
+            //Debug.Log("Caught");
+
+            FindObjectOfType<GameManager>().EndGame();
         }
     }
 }

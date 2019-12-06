@@ -6,7 +6,6 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     public NavMeshAgent agent;
-
     PlayerMovement playerScript;
 
     // Start is called before the first frame update
@@ -33,7 +32,7 @@ public class EnemyController : MonoBehaviour
         if (g.CompareTag("Player"))
         {
             playerScript.isCaught = true;
-            Debug.Log("Player Caught");
+            //Debug.Log("Player Caught");
         }
     }
 }
