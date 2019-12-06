@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 575589150266209747}
   - component: {fileID: 575589150266209746}
   - component: {fileID: 180945479038944761}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -121,7 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f939e4dff9a408346a72f9387e70c5d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghostMode: 0
   ghostModeDuration: 0.4
   material:
   - {fileID: 2100000, guid: 7930492c008ea4e468c9e4961f994394, type: 2}
