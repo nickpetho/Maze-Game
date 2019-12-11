@@ -22,6 +22,7 @@ public class TreasureDisplay : MonoBehaviour
         if (t.GetCount() == 0)
         {
             treasureText.text = "You win!";
+            FindObjectOfType<GameManager>().EndGame();
         }
         else
         {

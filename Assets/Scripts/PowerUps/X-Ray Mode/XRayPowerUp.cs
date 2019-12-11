@@ -14,6 +14,13 @@ public class XRayPowerUp : MonoBehaviour
         xrayModeScript = GameObject.FindWithTag("Player").GetComponent<XRayMode>();
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        //rotates 50 degrees per second around z axis
+        transform.Rotate(0, 0, 90 * Time.deltaTime);
+    }
+
     // Start is called before the first frame update
     void OnTriggerEnter(Collider col)
     {

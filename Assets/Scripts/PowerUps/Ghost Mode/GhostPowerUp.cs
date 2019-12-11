@@ -14,6 +14,12 @@ public class GhostPowerUp : MonoBehaviour
         ghostModeScript = GameObject.FindWithTag("Player").GetComponent<GhostMode>();
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        //rotates 50 degrees per second around z axis
+        transform.Rotate(0, 0, 90 * Time.deltaTime);
+    }
 
     // Start is called before the first frame update
     void OnTriggerEnter(Collider col)

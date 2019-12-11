@@ -7,26 +7,29 @@ public class XRayMode : MonoBehaviour
     public bool pickupActive = false;
     public bool xRayMode = false;
     public float xRayModeDuration = 2.0f;
+    public float xRayModeStart;
     float timer;
-    float xRayModeStart;
     public Material[] material;
     GameObject[] walls;
 
     // Update is called once per frame
     void Update()
     {
-        //Starts the cooldown timer for the players ability
-        xRayModeStart += Time.deltaTime;
-
         if (pickupActive)
         {
+            //Starts the cooldown timer for the players ability
+            xRayModeStart += Time.deltaTime;
+
             //Activates Ghost Mode if the cooldown has finished and the player presses space
-            if (Input.GetKeyDown(KeyCode.LeftShift) && xRayModeStart > 5.0f)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && xRayModeStart > 7.0f)
             {
                 xRayMode = true;
 
                 //Changes the players color to GhostColor
                 XRayVision(material[1]);
+
+                //Reset the timer
+                xRayModeStart = 0.0f;
             }
 
             //Starts the timer to determine how long Ghost Mode is active for
@@ -43,9 +46,8 @@ public class XRayMode : MonoBehaviour
                 //Changes the players color back to normal
                 XRayVision(material[0]);
 
-                //Resets the timers
+                //Resets the timer
                 timer = 0.0f;
-                xRayModeStart = 0.0f;
             }
         }
     }

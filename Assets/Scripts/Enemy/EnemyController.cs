@@ -7,11 +7,13 @@ public class EnemyController : MonoBehaviour
 {
     public NavMeshAgent agent;
     PlayerMovement playerScript;
+    GameManager gameScript;
 
     // Start is called before the first frame update
     void Start()
     {
         playerScript = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
+        gameScript = FindObjectOfType<GameManager>().GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -20,7 +22,7 @@ public class EnemyController : MonoBehaviour
         GameObject player = GameObject.FindWithTag("Player");
         GetComponent<NavMeshAgent>().destination = player.transform.position;
 
-        if (playerScript.isCaught)
+        if (gameScript.GameHasEnded)
         {
             GetComponent<NavMeshAgent>().isStopped = true;
         }
@@ -32,7 +34,6 @@ public class EnemyController : MonoBehaviour
         if (g.CompareTag("Player"))
         {
             playerScript.isCaught = true;
-            //Debug.Log("Player Caught");
         }
     }
 }

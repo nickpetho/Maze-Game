@@ -25,6 +25,6 @@ public class LevelManager : MonoBehaviour
     public void Fade_Out()
     {
         animator.SetBool("GameOver", playerScript.isCaught);
-        Debug.Log(playerScript.isCaught);
+        //Debug.Log(playerScript.isCaught);
     }
 }

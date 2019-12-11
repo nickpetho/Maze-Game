@@ -7,11 +7,9 @@ public class GhostMode : MonoBehaviour
     public bool pickupActive = false;
     public bool ghostMode = false;
     public float ghostModeDuration = 1.0f;
+    public float ghostModeStart;
     float timer;
-    float ghostModeStart;
-    public Material[] material;
     Rigidbody rb;
-    Renderer rend;
     Collider playerCollider;
 
     // Start is called before the first frame update
@@ -20,34 +18,30 @@ public class GhostMode : MonoBehaviour
         //Gets the players collider, rigidbody, and renderer components
         playerCollider = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
-        rend = GetComponent<Renderer>();
-
-        //Sets the material to the base material
-        rend.enabled = true;
-        rend.sharedMaterial = material[0];
+        ghostModeStart = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Starts the cooldown timer for the players ability
-        ghostModeStart += Time.deltaTime;
-
         if (pickupActive)
         {
+            //Starts the cooldown timer for the players ability
+            ghostModeStart += Time.deltaTime;
+
             //Activates Ghost Mode if the cooldown has finished and the player presses space
-            if (Input.GetKeyDown("space") && ghostModeStart > 3.0f)
+            if (Input.GetKeyDown("space") && ghostModeStart > 4.0f)
             {
                 ghostMode = true;
 
                 //Turns off the players collider
                 playerCollider.enabled = !playerCollider.enabled;
 
-                //Changes the players color to GhostColor
-                rend.sharedMaterial = material[1];
-
                 //Turns off gravity for the player (so they do not fall through the map)
                 rb.useGravity = false;
+
+                //Reset the timer
+                ghostModeStart = 0.0f;
             }
 
             //Starts the timer to determine how long Ghost Mode is active for
@@ -64,15 +58,11 @@ public class GhostMode : MonoBehaviour
                 //Turns on the players collider
                 playerCollider.enabled = true;
 
-                //Changes the players color back to normal
-                rend.sharedMaterial = material[0];
-
                 //Turns on gravity for the player
                 rb.useGravity = true;
 
-                //Resets the timers
+                //Resets the timer
                 timer = 0.0f;
-                ghostModeStart = 0.0f;
             }
         }
     }

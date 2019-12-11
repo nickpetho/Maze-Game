@@ -8,24 +8,35 @@ public class GhostDisplay : MonoBehaviour
     public GhostData g;
     public Text ghostText;
 
+    GhostMode ghostModeScript;
+
     // Start is called before the first frame update
     void Start()
     {
         //Gets the text component
         ghostText = GetComponent<Text>();
+
+        ghostModeScript = GameObject.FindWithTag("Player").GetComponent<GhostMode>();
     }
 
     // Update is called once per frame
     void Update()
     {
         //Checks to see if the player has gotten the powerup
-        if (g.GetCount() == 0)
+        if (g.GetCount() == 1)
         {
-            ghostText.text = "Ghost";
+            ghostText.text = " ";
         }
         else
         {
-            ghostText.text = " ";
+            if (ghostModeScript.ghostModeStart > 4)
+            {
+                ghostText.text = "Ghost   X";
+            }
+            else
+            {
+                ghostText.text = "Ghost";
+            }
         }
     }
 }

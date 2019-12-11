@@ -15,8 +15,8 @@ public class CollectTreasure : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //rotates 50 degrees per second around y axis
-        transform.Rotate(0, 50 * Time.deltaTime, 0); 
+        //rotates 50 degrees per second around z axis
+        transform.Rotate(0, 0, 50 * Time.deltaTime); 
     }
 
     void OnCollisionEnter(Collision col)

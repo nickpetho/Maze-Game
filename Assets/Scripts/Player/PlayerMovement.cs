@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Animator animator;
     public bool isCaught = false;
+    public bool isWalking = false;
     public float speed = 5.0f;
     public float turnSpeed = 125.0f;
     private float horizontalInput;
     private float forwardInput;
+    private Vector3 lastPosition;
+    Rigidbody rb;
 
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
+        lastPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -38,7 +43,16 @@ public class PlayerMovement : MonoBehaviour
             {
                 transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);
             }
+
+            if(lastPosition != transform.position){
+                animator.SetBool("isWalking", true);
+            }
+            else{
+                animator.SetBool("isWalking", false);
+            }
         }
+
+        lastPosition = transform.position;
     }
 
     void OnCollisionEnter(Collision col)
